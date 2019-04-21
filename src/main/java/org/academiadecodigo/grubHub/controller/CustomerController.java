@@ -91,7 +91,7 @@ public class CustomerController {
      */
     @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
     public String listCustomers(Model model) {
-
+        model.addAttribute("customers", customerToCustomerDto.convert(customerService.list()));
         return "customer/list";
     }
 
@@ -147,9 +147,9 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
     public String saveCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-            if (bindingResult.hasErrors()) {
-                return "customer/add-update";
-            }
+        if (bindingResult.hasErrors()) {
+            return "customer/add-update";
+        }
 
         Customer savedCustomer = customerService.save(customerDtoToCustomer.convert(customerDto));
         redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedCustomer.getFirstName() + " " + savedCustomer.getLastName());
