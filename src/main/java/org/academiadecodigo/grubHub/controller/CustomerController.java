@@ -89,10 +89,22 @@ public class CustomerController {
      * @param model the model object
      * @return the view to render
      */
-    @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/list"})
     public String listCustomers(Model model) {
         model.addAttribute("customers", customerToCustomerDto.convert(customerService.list()));
         return "customer/list";
+    }
+
+    /**
+     * Renders a view with the index
+     *
+     * @param model the model object
+     * @return the view to render
+     */
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    public String index(Model model) {
+
+        return "index";
     }
 
     /**

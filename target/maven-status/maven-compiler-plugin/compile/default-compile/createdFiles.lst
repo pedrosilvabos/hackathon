@@ -20,6 +20,7 @@ org/academiadecodigo/grubHub/controller/RecipientController.class
 org/academiadecodigo/grubHub/services/mock/MockAccountService.class
 org/academiadecodigo/grubHub/services/RecipientService.class
 org/academiadecodigo/grubHub/converters/AbstractConverter.class
+org/academiadecodigo/grubHub/controller/HomeController.class
 org/academiadecodigo/grubHub/SpringBootstrap.class
 org/academiadecodigo/grubHub/services/CustomerServiceImpl.class
 org/academiadecodigo/grubHub/services/mock/AbstractMockService.class
